@@ -74,13 +74,13 @@
         height: 30vh;
         width: 40vw;
         background-color: rgb(203, 203, 203);
-       
+        
         border: 5px solid white;
-      
+
         text-align: center;
         font-size: 2em;
         font-family: arial;
-        display: none;
+    
         border-radius: 10px;
         z-index: 50;
     }
