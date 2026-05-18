@@ -24,7 +24,7 @@ document.addEventListener("click", e => {
             function shootProj() {
                   const newAud3 = new Audio()
         newAud3.src = "shooting_sound.mp3"
-        newAud3.volume = 0.7
+        newAud3.volume = 0.33
         newAud3.play()
                const canvasRect = canvas.getBoundingClientRect()            
             ctxList.push({
@@ -60,7 +60,7 @@ died: false,
        wave = 0
        point = 0
        randomise()
-       lostMessage.style.display = "none"
+       lostMessage.close()
        mcDied = false
        speed = 5000
        points.innerText = "Points: " + point
@@ -227,12 +227,12 @@ randomise()
            
           const expSPL2 = new Audio()
         expSPL2.src = "lost.mp3"
-        expSPL2.volume = 1
+
         expSPL2.play()
                               ctxList = ctxList.filter(c => !c.died)
                       mcDied = true
 
-                     lostMessage.style.display = "block"
+                     lostMessage.showModal()
                         
                         ctMC.died = true
                         if (point > highScore) {
@@ -272,7 +272,7 @@ randomise()
                         amount--
                            const expSEN = new Audio()
         expSEN.src = "explosion.mp3"
-                        expSEN.volume = 0.7
+                        expSEN.volume = 0.6
         expSEN.play()
                         if (amount === 0) {
                            
@@ -306,7 +306,7 @@ randomise()
         let theEn = ctxList.filter(c => c.type === "enemy")[Math.floor(Math.random() * ctxList.filter(c => c.type === "enemy").length)]
         const newAud = new Audio()
         newAud.src = "shooting_sound.mp3"
-        newAud.volume = 0.4
+        newAud.volume = 0.3
         newAud.play()
                  ctxList.push({
             x: theEn.x + 15,
